@@ -175,7 +175,7 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url('../img/header-bg.jpeg');
+  background-image: url('/img/header-bg.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -187,11 +187,12 @@ body {
 .hero .mask-container {
   position: absolute;
   inset: 0;
-  -webkit-mask-image: url('../img/header-bg.svg');
+  -webkit-mask-image: url('/img/header-bg.svg');
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: cover;
   -webkit-mask-position: center;
 }
+
 
 .hero .content {
   padding: 1.4rem 7%;
@@ -530,6 +531,11 @@ footer .socials a {
   color: #fff;
   margin: 1rem;
 }
+footer .socials a svg {
+  stroke: white;       /* Biar warnanya putih */
+  width: 24px;
+  height: 24px;
+}
 
 footer .socials a:hover,
 footer .links a:hover {
@@ -552,6 +558,29 @@ footer .credit {
 footer .credit a {
   color: var(--bg);
   font-weight: 700;
+}
+.sosmed a {
+  margin: 0 10px;
+  color: inherit;
+}
+
+.sosmed a.instagram svg {
+  stroke: #e1306c !important;
+}
+
+.sosmed a.facebook svg {
+  stroke: #1877f2 !important;
+}
+
+.sosmed a.whatsapp svg {
+  stroke: #25D366 !important;
+}
+
+footer {
+  padding: 20px;
+  background-color: #b6895b;
+  color: whitesmoke;
+  text-align: center;
 }
 
 
@@ -676,6 +705,94 @@ footer .credit a {
     width: 90%;
     right: 2rem;
   }
+/* Basic */
+.navbar {
+  background-color: #2e2e2e;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-logo {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar-logo span {
+  color: #c58b59;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.navbar-nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-extra {
+  margin-left: auto;
+}
+
+.cart-icon {
+  color: white;
+  position: relative;
+}
+
+.cart-icon sup {
+  background-color: red;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  position: absolute;
+  top: -8px;
+  right: -10px;
+}
+
+/* Hamburger (default hidden) */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  margin-left: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar-nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #2e2e2e;
+    display: none;
+    padding: 1rem;
+  }
+
+  .navbar-nav.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navbar-extra {
+    margin-left: 0;
+  }
+}
 
   .about .row {
     flex-wrap: wrap;
@@ -727,3 +844,390 @@ footer .credit a {
     font-size: 55%;
   }
 }
+/* Biar seluruh halaman bisa tinggi penuh */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Bungkus utama halaman login */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg); /* ✅ PAKAI VARIABLE */
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+
+/* Kotak formulir login */
+.login-box {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 360px;
+  text-align: center;
+}
+
+/* Judul login */
+.login-box h2 {
+  margin-bottom: 20px;
+  color: #5c4033;
+}
+
+.login-box h2 span {
+  color: #a9744f;
+}
+
+/* Formulir */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.login-form button {
+  padding: 10px;
+  background-color: #5c4033;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-form button:hover {
+  background-color: #3e2a1c;
+}
+
+/* Cart Section */
+.cart-page {
+  min-height: 100vh;
+  background-color: var(--bg);
+  padding: 100px 7% 60px;
+  color: #fff;
+}
+
+.cart-title {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.cart-title span {
+  color: var(--primary);
+}
+
+.cart-empty {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #ccc;
+}
+
+/* Grid produk keranjang */
+.cart-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Item keranjang */
+.cart-item {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cart-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.cart-info h4 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.cart-info p {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.btn-remove {
+  padding: 0.5rem 1rem;
+  background-color: #b00020;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-remove:hover {
+  background-color: #800016;
+}
+
+/* Total Harga */
+.cart-total {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Form Checkout */
+.checkout-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative; /* ✅ Tambahkan ini agar z-index berfungsi */
+  z-index: 10;         /* ✅ Pastikan tombol tidak tertutup elemen lain */
+  padding: 1rem 0;
+}
+
+.checkout-form input {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Tombol Checkout */
+.btn-checkout {
+  padding: 0.8rem;
+  font-size: 1rem;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  pointer-events: auto;     /* ✅ Pastikan bisa diklik */
+  z-index: 20;
+  position: relative;
+}
+
+.btn-checkout:hover {
+  background-color: #a3744f;
+}
+
+/* Quantity control ( + / - ) */
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.quantity-control button {
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  background-color: #ddd;
+  border: none;
+  cursor: pointer;
+}
+
+.quantity-control span {
+  font-weight: bold;
+  min-width: 24px;
+  text-align: center;
+}
+
+/* Responsive Cart */
+@media (max-width: 1024px) {
+  .cart-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-form {
+    padding: 0 1rem;
+  }
+}
+.btn-checkout {
+  pointer-events: auto !important;
+  z-index: 9999 !important;
+  position: relative !important;
+}
+.checkout-form {
+  position: relative;
+  z-index: 1000;
+}
+
+.btn-checkout {
+  position: relative;
+  z-index: 1001;
+  pointer-events: auto;
+}
+iframe.map {
+  pointer-events: none;
+  z-index: 0;
+}
+.dashboard {
+  padding: 2rem;
+  background-color: #121212;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.dashboard h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.summary-cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: #1e1e1e;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  flex: 1 1 250px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: #cccccc;
+}
+
+.card p {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.btn-export {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-export:hover {
+  background-color: #218838;
+}
+/* Header Admin */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #000;
+  color: white;
+  border-bottom: 1px solid #333;
+  position: relative;
+  z-index: 10;
+}
+
+/* Kiri: Panel Admin dan Logo */
+.admin-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-left h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.admin-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-style: italic;
+  color: #b97a3d;
+}
+
+/* Tombol Logout */
+.logout-container {
+  display: flex;
+  justify-content: flex-end; /* Ganti ke flex-start kalau mau kiri */
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+}
+
+.logout-button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #555;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #333;
+}
+
+
+/* Grafik font size rechart */
+.recharts-wrapper .recharts-cartesian-axis-tick-value tspan {
+  font-size: 0.9rem !important;
+  fill: white;
+}
+
+/* Filter Pesanan */
+.order-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.order-filter input[type="text"],
+.order-filter input[type="date"] {
+  padding: 0.5rem;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Teks jika tidak ada data */
+.no-orders-text {
+  text-align: center;
+  color: #ccc;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+

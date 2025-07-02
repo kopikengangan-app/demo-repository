@@ -16,8 +16,8 @@ import AdminPanel from './pages/AdminPanel';
 
 const App = () => {
   return (
-    <CartProvider>
-      <Router>
+    <Router>
+      <CartProvider>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -30,8 +30,8 @@ const App = () => {
           <Route path="/admin" element={<AdminPanel />} />
         </Routes>
         <Footer />
-      </Router>
-    </CartProvider>
+      </CartProvider>
+    </Router>
   );
 };
 

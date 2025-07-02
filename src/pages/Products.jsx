@@ -1,54 +1,61 @@
-// src/pages/Products.jsx
 import React, { useContext, useEffect } from 'react';
 import { CartContext } from '../context/CartContext';
 
 const productItems = [
   {
+    id: 1,
     title: 'Arabica Aceh Gayo',
-    price: 'IDR 32K',
-    priceBefore: 'IDR 50K',
+    harga: 32000,
+    hargaSebelum: 50000,
     img: '/img/products1.jpg',
   },
   {
+    id: 2,
     title: 'Robusta Lampung',
-    price: 'IDR 30K',
-    priceBefore: 'IDR 45K',
+    harga: 30000,
+    hargaSebelum: 45000,
     img: '/img/products2.jpg',
   },
   {
+    id: 3,
     title: 'Toraja Kalosi',
-    price: 'IDR 35K',
-    priceBefore: 'IDR 55K',
+    harga: 35000,
+    hargaSebelum: 55000,
     img: '/img/products3.jpg',
   },
   {
+    id: 4,
     title: 'Java Preanger',
-    price: 'IDR 34K',
-    priceBefore: 'IDR 52K',
+    harga: 34000,
+    hargaSebelum: 52000,
     img: '/img/products4.jpg',
   },
   {
+    id: 5,
     title: 'Bali Kintamani',
-    price: 'IDR 36K',
-    priceBefore: 'IDR 56K',
+    harga: 36000,
+    hargaSebelum: 56000,
     img: '/img/products5.jpg',
   },
   {
+    id: 6,
     title: 'Blend Signature',
-    price: 'IDR 38K',
-    priceBefore: 'IDR 58K',
+    harga: 38000,
+    hargaSebelum: 58000,
     img: '/img/products6.jpg',
   },
   {
+    id: 7,
     title: 'Liberica Riau',
-    price: 'IDR 33K',
-    priceBefore: 'IDR 51K',
+    harga: 33000,
+    hargaSebelum: 51000,
     img: '/img/products7.jpg',
   },
   {
+    id: 8,
     title: 'Flores Bajawa',
-    price: 'IDR 37K',
-    priceBefore: 'IDR 59K',
+    harga: 37000,
+    hargaSebelum: 59000,
     img: '/img/products8.jpg',
   },
 ];
@@ -68,8 +75,8 @@ const Products = () => {
       <p>Temukan berbagai jenis kopi Nusantara pilihan terbaik untukmu.</p>
 
       <div className="row">
-        {productItems.map((item, index) => (
-          <div className="product-card" key={index}>
+        {productItems.map((item) => (
+          <div className="product-card" key={item.id}>
             <div className="product-icons">
               <button
                 onClick={() => addToCart(item)}
@@ -97,7 +104,7 @@ const Products = () => {
                 ))}
               </div>
               <div className="product-price">
-                {item.price} <span>{item.priceBefore}</span>
+                Rp {item.harga.toLocaleString()} <span>Rp {item.hargaSebelum.toLocaleString()}</span>
               </div>
             </div>
           </div>
